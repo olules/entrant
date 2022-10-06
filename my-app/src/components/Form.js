@@ -7,9 +7,27 @@ class Form extends Component {
     this.state = {
       username: "",
       password: "",
+      posts: []
     };
   }
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((data) => this.setState({posts:data}))
+  }
+  userNameHandler = (event) => {
+    this.setState({
+      username: event.target.value,
+    });
+  };
+  passwordHandler = (event) => {
+    this.setState({
+      password: event.target.value,
+    });
+  };
+
   render() {
+    const { posts } = this.state;
     return (
       <div className="container">
         <input
@@ -27,6 +45,9 @@ class Form extends Component {
           onChange={this.passwordHandler}
         />
         <button className="btn btn-primary">click me</button>
+        {posts.map((post) => (
+          <h2 key={post.id}>{post.title}</h2>
+        ))}
       </div>
     );
   }
