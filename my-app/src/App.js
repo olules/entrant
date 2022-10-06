@@ -7,6 +7,13 @@ import Example from "./components/Example";
 import Example2 from "./components/Example2";
 import Form from "./components/Form";
 import MyFragment from "./components/MyFragment";
+import Counter from "./components/counter";
+import CounterHook from "./components/counterHook";
+import FetchData from './components/fetchData';
+import ComponentD from './components/componentd';
+import React from 'react';
+import UseReducer from './components/usereducer'
+
 
 function App() {
   function clicked() {
@@ -17,8 +24,12 @@ function App() {
       {/*  <Name />
       <Example names={["python", "javascript", "c#"]} />
       <Example2 names={['react', 'django', 'kvlang']} />
-      <Form/> */}
-      <MyFragment />
+      <Form/> 
+      <MyFragment />}
+      {/*<Counter/>}
+        {/*<CounterHook/>*/}
+      <FetchData />
+     <UseReducer/>
     </div>
   );
 }
